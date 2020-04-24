@@ -20,9 +20,9 @@ function PokemonDetails({current}) {
              <div>
                <h3>{details.data.pokemon.species}</h3>
                <img alt="" src={details.data.pokemon.sprites}/>
-               <ul>
+               <ul className="list-group list-group-horizontal">
                 {details.data.pokemon.abilities.map(ability=>{
-                  return <li>{ability.name}</li> 
+                  return <li className="list-group-item">{ability.name}</li> 
                 })}
                </ul>
              </div>}
