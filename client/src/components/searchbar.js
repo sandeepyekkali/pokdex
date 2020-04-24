@@ -5,12 +5,12 @@ import {pokemons} from '../queries/queries'
 
 function SearchBar({onCurrentChange}){
 
-    const [CurrentPokemon, setCurrentPokemon] = useState(' ')
+    const [CurrentPokemon, setCurrentPokemon] = useState('')
     const searchRows = []
     
 
      const pokemonList = useQuery(pokemons)
-     console.log(pokemonList)
+     //console.log(pokemonList)
     
     
      if(!pokemonList.loading){

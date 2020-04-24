@@ -6,4 +6,15 @@ const pokemons = gql`{
     }
 }`
 
-export {pokemons}
+const pokemondetails = gql`
+query($id:ID){
+    pokemon(id:$id){
+      species
+      sprites
+      abilities{
+          name
+      }
+    }
+  }`
+
+export {pokemons, pokemondetails}
