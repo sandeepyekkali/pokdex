@@ -21,7 +21,7 @@ function App() {
       <Navbar></Navbar>
       <div className="container" style={{paddingTop:25}}>
         <div className="row">
-        <div className='col-6'><SearchBar onCurrentChange={handleCurrentChange}/></div>
+        <div className="col-6"><SearchBar onCurrentChange={handleCurrentChange}/></div>
         <div className='col-6'><PokemonDetails current={current}/></div>
         </div>
       </div>

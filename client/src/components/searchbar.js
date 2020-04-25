@@ -17,7 +17,7 @@ function SearchBar({onCurrentChange}){
         pokemonList.data.pokemons.forEach((pokemon)=>{
             if(pokemon.species.indexOf(CurrentPokemon)=== -1){return null}
             searchRows.push(
-                <li className="list-group-item">{pokemon.species}</li>
+                <li className="list-group-item" onClick={(e)=>setCurrentPokemon(pokemon.species)}>{pokemon.species}</li>
             )
          })
      }

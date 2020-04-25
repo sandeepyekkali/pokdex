@@ -7,11 +7,26 @@ const pokemonType = new GraphQLObjectType({
     name: 'pokemon',
     fields: ()=>({
         id: {type: GraphQLID},
-        species: {type: GraphQLString},
+        species: {type:GraphQLString},
         sprites: {type: GraphQLString},
-        abilities: {type: GraphQLList(abilitiesType)}
+        abilities: {type: GraphQLList(abilitiesType)},
+        tp:{type: GraphQLString},
+        stats:{type: GraphQLList(statsType)}
     })
 })
+
+const statsType = new GraphQLObjectType({
+    name: 'stat',
+    fields:()=>({
+        base_stat:{type: GraphQLString}
+    })
+})
+
+// const speciesType = new GraphQLObjectType({
+//     name: 'species',
+//     fields: ()=>({
+//         name:{type: GraphQLString}})
+// })
 
 const abilitiesType = new GraphQLObjectType({
     name: 'ability',
@@ -33,8 +48,11 @@ const RootQuery = new GraphQLObjectType({
                 x= {id:data.id, 
                     species: data.species.name,
                     sprites: data.sprites.front_default,
-                    abilities: data.abilities.map(abilityx=>{return {name: abilityx.ability.name}})
-            }})
+                    tp:  data.types[0].type.name,
+                    abilities: data.abilities.map(abilityx=>{return {name: abilityx.ability.name}}),
+                    stats : data.stats}
+                    
+            })
             return x
          }
      },

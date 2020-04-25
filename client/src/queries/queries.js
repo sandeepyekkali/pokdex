@@ -11,6 +11,10 @@ query($id:ID){
     pokemon(id:$id){
       species
       sprites
+      tp
+      stats{
+        base_stat
+      }
       abilities{
           name
       }
