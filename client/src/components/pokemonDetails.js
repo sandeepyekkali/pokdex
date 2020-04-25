@@ -16,8 +16,14 @@ function PokemonDetails({current}) {
     console.log(details)
 
     let bg = 'primary'
+    let stats = []
 
-    if(!details.loading && current){bg = getBg(details.data.pokemon.tp)}
+    if(!details.loading && current){
+      bg = getBg(details.data.pokemon.tp)
+      details.data.pokemon.stats.forEach(element => {
+        stats.push(element.base_stat)
+      });
+    }
 
     return (
         <div>
@@ -34,7 +40,7 @@ function PokemonDetails({current}) {
                   return <li className="list-group-item">{ability.name}</li> 
                 })}
                </ul>
-               <Plot></Plot>
+               <Plot stats={stats}></Plot>
              </div>}
         </div>
     )

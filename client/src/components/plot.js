@@ -11,7 +11,7 @@ class Plot extends Component {
               id: "basic-bar",
             },
             xaxis: {
-              categories: [ 'SPEED', 'RARITY', 'TEMPERMENT', 'ATTACK', 'DEFENCE', 'STRENGTH']
+              categories: [ 'Speed', 'Rarity', 'Temperment', 'Attack', 'Defence', 'Strength']
             },
             plotOptions:{
                 bar:{
@@ -23,7 +23,7 @@ class Plot extends Component {
           series: [
             {
               name: "series-1",
-              data: [30, 40, 45, 50, 49, 60]
+              data: props.stats
             }
           ]
         };
@@ -36,7 +36,6 @@ class Plot extends Component {
               options={this.state.options}
               series={this.state.series}
               type="bar"
-              height="350"
               width="500"
             />
             </div>
